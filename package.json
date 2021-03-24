@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "push:funmit": "git add . && git commit -m '人生何曾驻旧足，前端处处是新旅' && git push origin main"
+    "push": "git add . && git commit -m '人生何曾驻旧足，前端处处是新旅' && git push origin main"
   },
   "repository": {
     "type": "git",

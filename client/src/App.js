@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SimpleStorageContract from "./contracts/TodolistDemo.json";
+import SimpleStorageContract from "./contracts/Todolist.json";
 import getWeb3 from "./getWeb3";
 
 import "./App.css";
@@ -26,7 +26,15 @@ class App extends Component {
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.setState({ web3, accounts, contract: instance }, this.runExample);
-      this.getList();
+      //this.getList();
+      instance.events.HandleList()
+        .on("connected", function (subscriptionId) {
+          console.log(subscriptionId, "events 已连接");
+        })
+        .on('data', function (event) {
+          console.log(event, "data"); // 与上述可选的回调结果相同
+        })
+
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -66,7 +74,7 @@ class App extends Component {
     await contract.methods.add(Number(value)).send({ from: accounts[0] });
 
     const response = await contract.methods.getLength().call();
-    this.getList();
+    //this.getList();
 
     // Update state with the result.
     this.setState({ storageValue: response });
@@ -85,7 +93,7 @@ class App extends Component {
     await contract.methods.done(Number(value)).send({ from: accounts[0] });
 
     const response = await contract.methods.getLength().call();
-    this.getList();
+    //this.getList();
 
     // Update state with the result.
     this.setState({ storageValue: response });
@@ -97,7 +105,7 @@ class App extends Component {
     await contract.methods.remove(Number(value)).send({ from: accounts[0] });
 
     const response = await contract.methods.getLength().call();
-    this.getList();
+    //this.getList();
 
     // Update state with the result.
     this.setState({ storageValue: response });

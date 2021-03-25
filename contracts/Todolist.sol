@@ -7,7 +7,7 @@ contract Todolist {
     struct List {
         uint256 id; // id
         uint256 time; // 时间
-        uint256 content; // 内容
+        string content; // 内容
         address writer; // 写入者
         bool isDone; // 是否完成
     }
@@ -17,7 +17,7 @@ contract Todolist {
     event HandleList(
         uint256 id,
         uint256 time,
-        uint256 content,
+        string content,
         address writer,
         string types
     );
@@ -28,7 +28,7 @@ contract Todolist {
         _;
     }
 
-    function add(uint256 content) public {
+    function add(string memory content) public {
         emit HandleList(index, block.timestamp, content, msg.sender, "add");
         if (index == lists.length) {
             lists.push(

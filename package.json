@@ -1,5 +1,5 @@
 {
-  "name": "truffle-demo",
+  "name": "truffle_dapp_todolist_demo",
   "version": "1.0.0",
   "description": "",
   "main": "truffle-config.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiangzhengfeng/truffle-demo.git"
+    "url": "git+https://github.com/xiangzhengfeng/truffle_dapp_todolist_demo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xiangzhengfeng/truffle-demo/issues"
+    "url": "https://github.com/xiangzhengfeng/truffle_dapp_todolist_demo/issues"
   },
-  "homepage": "https://github.com/xiangzhengfeng/truffle-demo#readme",
+  "homepage": "https://github.com/xiangzhengfeng/truffle_dapp_todolist_demo#readme",
   "dependencies": {
     "@truffle/hdwallet-provider": "1.2.3"
   }

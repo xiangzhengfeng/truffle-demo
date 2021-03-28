@@ -14,7 +14,8 @@ export interface listItemProps {
 
 const TodoList = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 20px;
   background: ${themeColor};
 `
 

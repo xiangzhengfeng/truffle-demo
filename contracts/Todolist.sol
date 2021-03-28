@@ -60,13 +60,7 @@ contract Todolist {
     function remove(uint256 id) public LegalId(id) {
         List storage list = lists[id];
         require(list.isDone == true);
-        emit HandleList(
-            id,
-            block.timestamp,
-            list.content,
-            msg.sender,
-            "remove"
-        );
+        emit HandleList(id, block.timestamp, list.content, msg.sender, "remove");
         delete lists[id];
         index = id;
     }
